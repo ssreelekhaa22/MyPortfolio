@@ -14,23 +14,24 @@ const Contact = () => {
 
     // enter your own web3 forms access key below
 
-    formData.append("access_key", "xxxxxxxxxxxxxxxxxxxxxxxx");
+    formData.append("access_key", "05370c34-3860-48ff-bdd9-ac514b354e50");
 
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
 
-    const res = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json"
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
       },
-      body: json
+      body: json,
     }).then((res) => res.json());
 
-
     alert(res.message);
-
+    if (res.success) {
+      event.target.reset();
+    }
   };
 
 
@@ -50,7 +51,7 @@ const Contact = () => {
 
             </div>
             <div className="contact-detail">
-              <IoCall /> <p>513-836-5977</p>
+              <IoCall />  <a href="tel:+15138365977">513-836-5977</a>
             </div>
             <div className="contact-detail">
               <FaLocationDot /> <p>Austin, TX, United States</p>
@@ -69,11 +70,11 @@ const Contact = () => {
         </div>
         <form onSubmit={onSubmit} className="contact-right">
           <label htmlFor="">Your Name</label>
-          <input type="text" placeholder='Enter your name' name='name' />
+          <input type="text" placeholder='Enter your name' name='name' required />
           <label htmlFor="">Your Email</label>
           <input type="email" placeholder='Enter your email' name='email' />
           <label htmlFor="">Write your message here</label>
-          <textarea name="message" rows="8" placeholder='Enter your message'></textarea>
+          <textarea name="message" rows="8" placeholder='Enter your message' required></textarea>
           <button type='submit' className="contact-submit">Submit now</button>
         </form>
       </div>
