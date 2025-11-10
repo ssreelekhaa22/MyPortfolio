@@ -120,3 +120,54 @@
    
     
 }
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+  }
+  
+  .modal-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #111;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 28px 32px;
+    height: 300px;
+    width: 500px;
+    text-align: center;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+  }
+  
+  .modal-box h2 {
+    margin-bottom: 10px;
+    font-size: 25px;
+  }
+  
+  .modal-box p {
+    margin-bottom: 18px;
+    color: #d4d4d4;
+  }
+
+  /* .modal-box svg{
+    align-self: end;
+  } */
+  
+  .modal-box button {
+    background: linear-gradient(135deg, #df8908 0%, #b415ff 100%);
+    border: none;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 9999px;
+    cursor: pointer;
+    font-weight: 600;
+    width: fit-content;
+    align-self: center;
+  }
+  

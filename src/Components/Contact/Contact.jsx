@@ -5,11 +5,13 @@ import { FaLinkedin } from "react-icons/fa";
 import { IoCall } from 'react-icons/io5'
 import { IoIosMail } from 'react-icons/io'
 import { FaLocationDot } from 'react-icons/fa6'
+import { IoClose } from 'react-icons/io5'
+
 
 const Contact = () => {
 
   const UUID = "05370c34-3860-48ff-bdd9-ac514b354e50",
-    [status, setStatus] = useState('');
+    [showModal, setShowModal] = useState(false);
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -30,10 +32,10 @@ const Contact = () => {
     }).then((res) => res.json());
 
     if (res.success) {
-      setStatus('Email sent successfully ✅');
+      setShowModal('Email sent successfully ✅');
       event.target.reset();
     } else {
-      setStatus('Something went wrong. Please try again.');
+      setShowModal('Something went wrong. Please try again.');
     }
   };
 
@@ -79,7 +81,19 @@ const Contact = () => {
           <label htmlFor="">Write your message here</label>
           <textarea name="message" rows="8" placeholder='Enter your message' required></textarea>
           <button type='submit' className="contact-submit">Submit now</button>
-          {status && <p className="contact-status">{status}</p>}
+          {showModal && (
+            <div className="modal-overlay" onClick={() => setShowModal(false)}>
+              <div
+                className="modal-box"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {/* <IoClose size="24" onClick={() => setShowModal(false)} /> */}
+                <h2>Email sent successfully ✅</h2>
+                <p>Thank you!</p>
+                <button onClick={() => setShowModal(false)}>Close </button>
+              </div>
+            </div>
+          )}
         </form>
       </div>
     </div>

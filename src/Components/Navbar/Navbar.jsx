@@ -21,7 +21,7 @@ const Navbar = () => {
     <div className='navbar'>
       <RiMenu3Line onClick={openMenu} className='nav-mob-open' />
       <ul ref={menuRef} className="nav-menu">
-        <IoClose onClick={closeMenu} className="nav-mob-close" />
+        <IoClose size="20" onClick={closeMenu} className="nav-mob-close" />
         <li><AnchorLink className='anchor-link' href='#home' offset={100}><p onClick={() => setMenu("home")}>Home</p></AnchorLink>{menu === "home" ? <img src={underline} alt='' /> : <></>}</li>
         <li><AnchorLink className='anchor-link' offset={50} href='#about'><p onClick={() => setMenu("about")}>About Me</p></AnchorLink>{menu === "about" ? <img src={underline} alt='' /> : <></>}</li>
         <li><AnchorLink className='anchor-link' offset={50} href='#experience'><p onClick={() => setMenu("experience")}>Experience</p></AnchorLink>{menu === "experience" ? <img src={underline} alt='' /> : <></>}</li>
