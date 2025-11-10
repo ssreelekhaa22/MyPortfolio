@@ -12,7 +12,7 @@ const Contact = () => {
     event.preventDefault();
     const formData = new FormData(event.target);
 
-// enter your own web3 forms access key below
+    // enter your own web3 forms access key below
 
     formData.append("access_key", "xxxxxxxxxxxxxxxxxxxxxxxx");
 
@@ -28,9 +28,9 @@ const Contact = () => {
       body: json
     }).then((res) => res.json());
 
-    
-      alert(res.message);
-    
+
+    alert(res.message);
+
   };
 
 
@@ -42,31 +42,39 @@ const Contact = () => {
       </div>
       <div className="contact-section">
         <div className="contact-left">
-            <h1>Let's talk</h1>
-            <p>I'm currently avaliable to take on new projects, so feel free to send me a message about anything that you want me to work on. You can contact anytime.</p>
-            <div className="contact-details">
-                <div className="contact-detail">
-                    <IoIosMail /> <p>nssreelekhaa@outlook.com</p>
-                </div>
-                <div className="contact-detail">
-                    <IoCall /> <p>513-836-5977</p>
-                </div>
-                <div className="contact-detail">
-                    <FaLocationDot /> <p>Austin, TX, United States</p>
-                </div>
-                <div className="contact-detail">
-                    <FaLinkedin/> <p>https://www.linkedin.com/in/sreelekhaa-n-775519219/</p>
-                </div>
+          <h1>Let's talk</h1>
+          <p>I'm currently avaliable to take on new projects, so feel free to send me a message about anything that you want me to work on. You can contact anytime.</p>
+          <div className="contact-details">
+            <div className="contact-detail">
+              <IoIosMail />   <a href="mailto:nssreelekhaa@outlook.com">nssreelekhaa@outlook.com</a>
+
             </div>
+            <div className="contact-detail">
+              <IoCall /> <p>513-836-5977</p>
+            </div>
+            <div className="contact-detail">
+              <FaLocationDot /> <p>Austin, TX, United States</p>
+            </div>
+            <div className="contact-detail">
+              <FaLinkedin /> <a
+
+                href="https://www.linkedin.com/in/sreelekhaa/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                linkedin.com/in/sreelekhaa
+              </a>
+            </div>
+          </div>
         </div>
         <form onSubmit={onSubmit} className="contact-right">
-            <label htmlFor="">Your Name</label>
-            <input type="text" placeholder='Enter your name' name='name' />
-            <label htmlFor="">Your Email</label>
-            <input type="email" placeholder='Enter your email' name='email' />
-            <label htmlFor="">Write your message here</label>
-            <textarea name="message" rows="8" placeholder='Enter your message'></textarea>
-            <button type='submit' className="contact-submit">Submit now</button>
+          <label htmlFor="">Your Name</label>
+          <input type="text" placeholder='Enter your name' name='name' />
+          <label htmlFor="">Your Email</label>
+          <input type="email" placeholder='Enter your email' name='email' />
+          <label htmlFor="">Write your message here</label>
+          <textarea name="message" rows="8" placeholder='Enter your message'></textarea>
+          <button type='submit' className="contact-submit">Submit now</button>
         </form>
       </div>
     </div>

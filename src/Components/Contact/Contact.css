@@ -27,7 +27,8 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-.contact-left p{
+.contact-left p,a{
+    text-decoration: none;
     max-width: 550px;
     color: #D8D8D8;
     font-size: 16px;

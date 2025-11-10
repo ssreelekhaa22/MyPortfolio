@@ -8,7 +8,8 @@ const Hero = () => {
   return (
     <div id='home' className='hero'>
       <img src={profile_img} alt="" className='profile-img' />
-      <h1><span>I'm Sreelekhaa,</span> frontend developer based in USA.</h1>
+      {/* <h1>Hi!</h1> */}
+      <h1><span>I'm Sreelekhaa,</span> frontend developer.</h1>
       <p>I’m a developer passionate about crafting accessible, pixel-perfect user interfaces that blend thoughtful design with robust engineering.</p>
       <div className="hero-action">
         <div className="hero-connect" onClick={() => window.location.href = '#contact'}>
