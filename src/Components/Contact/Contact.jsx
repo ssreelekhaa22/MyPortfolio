@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Contact.css'
 import theme_pattern from '../../assets/theme_pattern.svg'
 import { FaLinkedin } from "react-icons/fa";
@@ -8,13 +8,14 @@ import { FaLocationDot } from 'react-icons/fa6'
 
 const Contact = () => {
 
+  const UUID = "05370c34-3860-48ff-bdd9-ac514b354e50",
+    [status, setStatus] = useState('');
+
   const onSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
 
-    // enter your own web3 forms access key below
-
-    formData.append("access_key", "05370c34-3860-48ff-bdd9-ac514b354e50");
+    formData.append('access_key', UUID);
 
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
@@ -28,9 +29,11 @@ const Contact = () => {
       body: json,
     }).then((res) => res.json());
 
-    alert(res.message);
     if (res.success) {
+      setStatus('Email sent successfully ✅');
       event.target.reset();
+    } else {
+      setStatus('Something went wrong. Please try again.');
     }
   };
 
@@ -76,6 +79,7 @@ const Contact = () => {
           <label htmlFor="">Write your message here</label>
           <textarea name="message" rows="8" placeholder='Enter your message' required></textarea>
           <button type='submit' className="contact-submit">Submit now</button>
+          {status && <p className="contact-status">{status}</p>}
         </form>
       </div>
     </div>
