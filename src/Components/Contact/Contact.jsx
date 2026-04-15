@@ -52,11 +52,11 @@ const Contact = () => {
           <p>I'm currently avaliable to take on new projects, so feel free to send me a message about anything that you want me to work on. You can contact anytime.</p>
           <div className="contact-details">
             <div className="contact-detail">
-              <IoIosMail />   <a href="mailto:nssreelekhaa@outlook.com">nssreelekhaa@outlook.com</a>
+              <IoIosMail />   <a href="mailto:ssreelekhaa@outlook.com">ssreelekhaa@outlook.com</a>
 
             </div>
             <div className="contact-detail">
-              <IoCall />  <a href="tel:+15138365977">513-836-5977</a>
+              <IoCall />  <a href="tel:+7372356222">737-235-6222</a>
             </div>
             <div className="contact-detail">
               <FaLocationDot /> <p>Austin, TX, United States</p>
