@@ -56,7 +56,7 @@ const Contact = () => {
 
             </div>
             <div className="contact-detail">
-              <IoCall />  <a href="tel:+7372356222">737-235-6222</a>
+              <IoCall />  <a href="tel:+5123783606">512-378-3606</a>
             </div>
             <div className="contact-detail">
               <FaLocationDot /> <p>Austin, TX, United States</p>
